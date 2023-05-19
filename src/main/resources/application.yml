@@ -3,13 +3,20 @@ server:
 
 spring:
   application:
-    name: cloud-payment-service
+    name: zhia-gateway
 
 eureka:
   client:
-    register-with-eureka: true #表明将自己注册进EurekaServer
-    fetch-registry: true
-    service-url:
+    serviceUrl:
       defaultZone: http://localhost:8080/eureka/
+    healthcheck:
+      enabled: true
   instance:
-    instance-id: payment8001 #注册的服务名称
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+
+
+
+
+
+
